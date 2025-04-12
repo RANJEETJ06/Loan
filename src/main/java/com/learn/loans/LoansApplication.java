@@ -1,6 +1,6 @@
 package com.learn.loans;
 
-import com.learn.loans.dto.AccountsInfoDto;
+import com.learn.loans.dto.LoansInfoDto;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
@@ -24,7 +24,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
         )
 
 )
-@EnableConfigurationProperties(AccountsInfoDto.class)
+@EnableConfigurationProperties(LoansInfoDto.class)
 public class LoansApplication {
 
 	public static void main(String[] args) {

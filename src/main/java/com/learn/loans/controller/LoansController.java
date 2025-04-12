@@ -1,9 +1,9 @@
 package com.learn.loans.controller;
 
 import com.learn.loans.constants.LoansConstants;
-import com.learn.loans.dto.AccountsInfoDto;
 import com.learn.loans.dto.ErrorResponseDto;
 import com.learn.loans.dto.LoansDto;
+import com.learn.loans.dto.LoansInfoDto;
 import com.learn.loans.dto.ResponseDto;
 import com.learn.loans.service.ILoansService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -49,7 +49,7 @@ public class LoansController {
     private Environment environment;
 
     @Autowired
-    private AccountsInfoDto accountsInfoDto;
+    private LoansInfoDto loansInfoDto;
 
     @Operation(
             summary = "Create Loan REST API",
@@ -241,8 +241,8 @@ public class LoansController {
             )
     })
     @GetMapping("/get-contact")
-    public ResponseEntity<AccountsInfoDto> getContactInfo(){
-        return ResponseEntity.status(HttpStatus.OK).body(accountsInfoDto);
+    public ResponseEntity<LoansInfoDto> getContactInfo(){
+        return ResponseEntity.status(HttpStatus.OK).body(loansInfoDto);
     }
 
 }

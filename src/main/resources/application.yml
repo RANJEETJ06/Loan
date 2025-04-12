@@ -20,3 +20,10 @@ spring:
     active: "prod"
   application:
     name: "loans"
+
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
