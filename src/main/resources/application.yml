@@ -22,7 +22,6 @@ spring:
     name: "loans"
 
 management:
-  endpoint:
   endpoints:
     web:
       exposure:
