@@ -1,9 +1,13 @@
 server:
   port: 8090
+
 spring:
+  application:
+    name: loans
+  # ---- DataSource / JPA ----
   datasource:
     url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
+    driver-class-name: org.h2.Driver
     username: sa
     password: ''
   h2:
@@ -13,19 +17,20 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-    show-sql: true
-  config:
-    import: "configserver:http://localhost:8071/"
-  profiles:
-    active: "dev"
-  application:
-    name: "loans"
-  rabbitmq:
-    host: "localhost"
-    port: 5672
-    username: "guest"
-    password: "guest"
 
+  # ---- Config Server ----
+  config:
+    import: "configserver:http://configserver-ms:8071/"
+
+  # ---- RabbitMQ ----
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest
+
+  profiles:
+    active: "prod"
 
 management:
   endpoints:
