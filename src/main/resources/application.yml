@@ -8,7 +8,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+#    show-sql: true
   config:
     import: "configserver:http://localhost:8071/"
   application:
@@ -50,3 +50,9 @@ info:
     name: "loans"
     description: "learn API for loans"
     version: "1.1.0"
+
+logging:
+  level:
+    com:
+      learn:
+        loans: DEBUG
